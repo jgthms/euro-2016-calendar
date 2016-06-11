@@ -1,0 +1,164 @@
+@import "reset"
+
+$background: #ebeff5
+$strong: #222324
+$text: #69707a
+$light: #aeb1b5
+
+$blue: #2478ff
+$green: #07b567
+$red: #fc4f5f
+
+$navy: #2c6a93
+$navy-dark: #000a34
+
+html,
+.filters
+  background-attachment: fixed
+  background-color: $navy
+  background-image: radial-gradient(circle farthest-corner at top center, $navy, $navy-dark)
+  background-size: 100%
+
+html
+  font-size: 12px
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  min-width: 320px
+  overflow-x: hidden
+  overflow-y: scroll
+  text-rendering: optimizeLegibility
+
+body
+  background-color: transparent
+  color: $text
+  font-family: "Open Sans", "Source Sans Pro", Arial, sans-serif
+  font-size: 1rem
+  font-weight: 400
+  line-height: 20px
+  white-space: nowrap
+
+=overlay($offset: 0)
+  bottom: $offset
+  left: $offset
+  position: absolute
+  right: $offset
+  top: $offset
+
+.button
+  background: none
+  border: 1px solid $blue
+  border-radius: 3px
+  color: $blue
+  display: inline-block
+  height: 30px
+  line-height: 28px
+  padding: 0 10px
+  text-align: center
+  text-decoration: underline
+  vertical-align: top
+  &.is-green
+    border-color: $green
+    color: $green
+  &.is-red
+    border-color: $red
+    color: $red
+
+
+.date
+  color: rgba(white, 0.5)
+  font-size: 10px
+  font-weight: bold
+  padding: 20px 10px 10px
+  text-transform: uppercase
+
+.game
+  align-items: center
+  background: white
+  border-bottom: 1px solid $background
+  display: flex
+  justify-content: center
+  min-height: 41px
+  padding: 10px 0
+  &.is-home-winner
+    .team.is-home
+      color: $green
+    .team.is-away
+      color: $light
+    .score
+      display: flex
+    .time
+      display: none
+    .number:first-child
+      background: $green
+      color: white
+    .number:last-child
+      color: $light
+
+.team
+  color: $strong
+  flex: 1 0
+  font-weight: bold
+  &.is-home
+    text-align: right
+
+.score,
+.time
+  align-items: center
+  display: flex
+  flex-basis: 60px
+  justify-content: center
+  width: 60px
+
+.score
+  display: none
+
+.time
+  color: $light
+  font-weight: bold
+  text-align: center
+
+.number
+  align-items: center
+  background: $background
+  color: $strong
+  display: flex
+  font-weight: bold
+  height: 20px
+  justify-content: center
+  width: 20px
+
+.nav
+  background: white
+  bottom: 0
+  box-shadow: 0 -2px 5px rgba(black, 0.1)
+  display: flex
+  left: 0
+  padding: 10px
+  padding-right: 0
+  position: fixed
+  right: 0
+  .button
+    flex: 1
+    margin-right: 10px
+    &.is-green
+      flex: 3
+
+.filters
+  +overlay
+  background: white
+  display: none
+  overflow: auto
+  padding-bottom: 50px
+  position: fixed
+  p
+    background: $background
+    padding: 20px 10px 10px
+  a
+    border-top: 1px solid $background
+    color: $strong
+    display: block
+    font-weight: bold
+    padding: 10px
+
+#filters-controls
+  display: none
