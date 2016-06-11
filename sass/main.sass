@@ -52,6 +52,17 @@ a
   right: $offset
   top: $offset
 
+.image
+  display: block
+  height: 97px
+  margin-bottom: 10px
+  text-align: center
+  img
+    display: inline-block
+    height: 97px
+    vertical-align: top
+    width: 97px
+
 .button
   background: none
   border: 1px solid $blue
@@ -265,6 +276,11 @@ a
   &.is-active
     display: flex
 
+#follow
+  height: 20px
+  overflow: hidden
+  white-space: nowrap
+
 $bp: 960px
 
 @media (max-width: $bp - 1px)
@@ -282,27 +298,27 @@ $bp: 960px
   #filters
     bottom: 50px
     right: auto
-    width: 200px
+    width: 220px
   #about
     display: flex
     bottom: 50%
     height: 50vh
     left: auto
     white-space: normal
-    width: 200px
+    width: 220px
   #share
     border-top: 1px solid $background
     display: flex
     height: 50vh
     left: auto
     top: 50%
-    width: 200px
+    width: 220px
   .main
-    margin: 0 220px
+    margin: 0 240px
   #filter-controls
     display: flex
     right: auto
-    width: 200px
+    width: 220px
     .button.is-green
       display: none
   .filters
@@ -310,7 +326,7 @@ $bp: 960px
     a
       padding: 6px 10px
 
-@media (min-width: 1200px)
+@media (min-width: 1500px)
   .main
     margin: 0 auto
-    max-width: 1180px
+    max-width: 960px
