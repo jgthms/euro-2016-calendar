@@ -43,6 +43,7 @@ body
 
 a
   color: $blue
+  cursor: pointer
 
 =overlay($offset: 0)
   bottom: $offset
@@ -63,12 +64,21 @@ a
   text-align: center
   text-decoration: none
   vertical-align: top
+  &:hover
+    background: $blue
+    color: white
   &.is-green
     border-color: $green
     color: $green
+    &:hover
+      background: $green
+      color: white
   &.is-red
     border-color: $red
     color: $red
+    &:hover
+      background: $red
+      color: white
   &.is-facebook,
   &.is-twitter
     color: white
@@ -152,6 +162,8 @@ a
     .number:last-child
       background: $green
       color: white
+  & + .date.is-break
+    margin-top: 20px
 
 .team
   color: $strong
@@ -215,21 +227,23 @@ a
 .modal
   +overlay
   background: white
-  bottom: 50px
-  display: none
   overflow: auto
   position: fixed
 
 .filters
+  background: $background
   p
     background: $background
     padding: 20px 10px 10px
   a
+    background: white
     border-top: 1px solid $background
     color: $strong
     display: block
     font-weight: bold
     padding: 10px
+    &:hover
+      background: lightyellow
     &.is-active
       background: $green
       color: white
@@ -247,11 +261,56 @@ a
   a
     text-decoration: underline
   p
-    margin-top: 2rem
+    margin-top: 1rem
   &.is-active
     display: flex
 
-html.has-modal-open
-  overflow: hidden
+$bp: 960px
+
+@media (max-width: $bp - 1px)
+  .modal
+    bottom: 50px
+    display: none
+  html.has-modal-open
+    overflow: hidden
+    #nav
+      display: none
+
+@media (min-width: $bp)
   #nav
     display: none
+  #filters
+    bottom: 50px
+    right: auto
+    width: 200px
+  #about
+    display: flex
+    bottom: 50%
+    height: 50vh
+    left: auto
+    white-space: normal
+    width: 200px
+  #share
+    border-top: 1px solid $background
+    display: flex
+    height: 50vh
+    left: auto
+    top: 50%
+    width: 200px
+  .main
+    margin: 0 220px
+  #filter-controls
+    display: flex
+    right: auto
+    width: 200px
+    .button.is-green
+      display: none
+  .filters
+    background: $background
+    a
+      padding: 6px 10px
+
+@media (min-width: 1200px)
+  .main
+    margin: 0 auto
+    max-width: 1180px
