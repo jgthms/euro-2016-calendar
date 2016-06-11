@@ -12,6 +12,9 @@ $red: #fc4f5f
 $navy: #2c6a93
 $navy-dark: #000a34
 
+$facebook: #3b5998
+$twitter: #55acee
+
 html,
 .filters
   background-attachment: fixed
@@ -38,6 +41,9 @@ body
   line-height: 20px
   white-space: nowrap
 
+a
+  color: $blue
+
 =overlay($offset: 0)
   bottom: $offset
   left: $offset
@@ -55,7 +61,7 @@ body
   line-height: 28px
   padding: 0 10px
   text-align: center
-  text-decoration: underline
+  text-decoration: none
   vertical-align: top
   &.is-green
     border-color: $green
@@ -63,7 +69,24 @@ body
   &.is-red
     border-color: $red
     color: $red
+  &.is-facebook,
+  &.is-twitter
+    color: white
+    height: 40px
+    line-height: 36px
+    padding: 0 20px
+    text-decoration: none
+  &.is-facebook
+    background: $facebook
+    border-color: $facebook
+  &.is-twitter
+    background: $twitter
+    border-color: $twitter
 
+.title
+  color: $strong
+  font-size: 2rem
+  line-height: 1
 
 .date
   color: rgba(white, 0.5)
@@ -167,11 +190,13 @@ body
   justify-content: center
   width: 20px
 
+// Navs
+
 .nav
   background: white
   bottom: 0
   box-shadow: 0 -2px 5px rgba(black, 0.1)
-  display: flex
+  display: none
   left: 0
   padding: 10px
   padding-right: 0
@@ -182,14 +207,20 @@ body
     margin-right: 10px
     &.is-green
       flex: 3
+  &.is-active
+    display: flex
 
-.filters
+// Modals
+
+.modal
   +overlay
   background: white
+  bottom: 50px
   display: none
   overflow: auto
-  padding-bottom: 50px
   position: fixed
+
+.filters
   p
     background: $background
     padding: 20px 10px 10px
@@ -199,6 +230,28 @@ body
     display: block
     font-weight: bold
     padding: 10px
+    &.is-active
+      background: $green
+      color: white
+  &.is-active
+    display: block
 
-#filters-controls
-  display: none
+.about,
+.share
+  align-items: center
+  font-size: 1.25rem
+  justify-content: center
+  line-height: 1.5
+  padding: 20px
+  text-align: center
+  a
+    text-decoration: underline
+  p
+    margin-top: 2rem
+  &.is-active
+    display: flex
+
+html.has-modal-open
+  overflow: hidden
+  #nav
+    display: none

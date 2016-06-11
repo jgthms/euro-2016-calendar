@@ -971,7 +971,7 @@
       </article>
     </main>
 
-    <aside class="filters">
+    <aside id="filters" class="modal filters">
       <p>Teams</p>
       <a class="filter-team" data-team="Albania">Albania</a>
       <a class="filter-team" data-team="Austria">Austria</a>
@@ -1006,16 +1006,44 @@
       <a class="filter-group" data-group="F">F</a>
     </aside>
 
-    <nav id="nav" class="nav">
-      <a class="button">Filters</a>
-      <a class="button">About</a>
-      <a class="button">Share</a>
-      <a class="button">Now</a>
+    <aside id="about" class="modal about">
+      <div>
+        <h1 class="title">Euro 2016 Calendar</h1>
+        <p>By <a href="http://jgthms.com">Jeremy Thomas</a></p>
+        <p>Open source on <a href="https://github.com/jgthms/euro-2016-calendar">GitHub</a></p>
+      </div>
+    </aside>
+
+    <aside id="share" class="modal share">
+      <div>
+        <h1 class="title">Share</h1>
+        <p>
+          <a class="button is-twitter" href="https://twitter.com/intent/tweet?url=http://jgthms.com/euro-2016-calendar/&text=Simple mobile-friendly Euro 2016 Calendar&via=jgthms" target="_blank">
+            Share on Twitter
+          </a>
+        </p>
+        <p>
+          <a class="button is-facebook" href="http://www.facebook.com/sharer.php?u=http://jgthms.com/euro-2016-calendar/" rel="nofollow" target="_blank">
+            Share on Facebook
+          </a>
+        </p>
+      </div>
+    </aside>
+
+    <nav id="nav" class="nav is-active">
+      <a id="goto-filters" class="button">Filters</a>
+      <a id="goto-about" class="button">About</a>
+      <a id="goto-share" class="button">Share</a>
+      <a id="goto-today" class="button">Today</a>
     </nav>
 
-    <nav id="filters-controls" class="nav">
-      <a class="button is-red">Reset</a>
-      <a class="button is-green">Done</a>
+    <nav id="modal-controls" class="nav">
+      <a class="button close-modal">Close</a>
+    </nav>
+
+    <nav id="filter-controls" class="nav">
+      <a class="button is-green close-modal">Done</a>
+      <a id="reset" class="button is-red">Reset</a>
     </nav>
 
     <script type="text/javascript" src="javascript/jquery-3.0.0.min.js"></script>
