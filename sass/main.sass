@@ -26,6 +26,7 @@ html
   min-width: 320px
   overflow-x: hidden
   overflow-y: scroll
+  padding-bottom: 50px
   text-rendering: optimizeLegibility
 
 body
@@ -70,6 +71,23 @@ body
   font-weight: bold
   padding: 20px 10px 10px
   text-transform: uppercase
+  &:before,
+  &:after
+    float: right
+  &.is-break
+    background: rgba(black, 0.5)
+    margin-bottom: 1px
+    padding-top: 10px
+    &:after
+      color: yellow
+      content: "Break"
+  &.is-today
+    &:before
+      background: $green
+      color: white
+      content: "Today"
+      margin-left: 1em
+      padding: 0 5px
 
 .game
   align-items: center
@@ -79,35 +97,56 @@ body
   justify-content: center
   min-height: 41px
   padding: 10px 0
+  position: relative
+  &.is-now
+    background: lightyellow
+    .time
+      background: $red
+      color: white
+  &.is-home-winner,
+  &.is-away-winner
+    .score
+      display: flex
+    .time
+      display: none
   &.is-home-winner
     .team.is-home
       color: $green
     .team.is-away
       color: $light
-    .score
-      display: flex
-    .time
-      display: none
     .number:first-child
       background: $green
       color: white
     .number:last-child
       color: $light
+  &.is-away-winner
+    .team.is-home
+      color: $light
+    .team.is-away
+      color: $green
+    .number:first-child
+      color: $light
+    .number:last-child
+      background: $green
+      color: white
 
 .team
   color: $strong
   flex: 1 0
   font-weight: bold
   &.is-home
+    padding-right: 10px
     text-align: right
+  &.is-away
+    padding-left: 10px
 
 .score,
 .time
   align-items: center
   display: flex
-  flex-basis: 60px
+  flex-basis: 40px
   justify-content: center
-  width: 60px
+  width: 40px
 
 .score
   display: none
@@ -116,6 +155,7 @@ body
   color: $light
   font-weight: bold
   text-align: center
+  visibility: hidden
 
 .number
   align-items: center
