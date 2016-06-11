@@ -1,0 +1,30 @@
+{
+  "name": "euro-2016-calendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^6.3.6",
+    "flag-icon-css": "^2.3.0",
+    "postcss-cli": "^2.5.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "flag-icon-css": "^2.3.0",
+    "postcss-cli": "^2.5.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "autoprefix": "postcss --use autoprefixer --output main.css main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgthms/euro-2016-calendar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgthms/euro-2016-calendar/issues"
+  },
+  "homepage": "https://github.com/jgthms/euro-2016-calendar#readme"
+}

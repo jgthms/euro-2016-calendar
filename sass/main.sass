@@ -52,6 +52,16 @@ a
   right: $offset
   top: $offset
 
+.flag-icon
+  height: 12px
+  width: 16px
+  &.flag-icon-england
+    background-image: url("images/england.svg")
+  &.flag-icon-northernireland
+    background-image: url("images/northern-ireland.svg")
+  &.flag-icon-wales
+    background-image: url("images/wales.svg")
+
 .image
   display: block
   height: 97px
@@ -180,11 +190,19 @@ a
   color: $strong
   flex: 1 0
   font-weight: bold
+  .flag-icon
+    margin-top: 4px
   &.is-home
     padding-right: 10px
     text-align: right
+    .flag-icon
+      float: right
+      margin-left: 5px
   &.is-away
     padding-left: 10px
+    .flag-icon
+      float: left
+      margin-right: 5px
 
 .score,
 .time
@@ -253,11 +271,19 @@ a
     display: block
     font-weight: bold
     padding: 10px
+    .flag-icon
+      left: 10px
+      margin-top: -6px
+      position: absolute
+      top: 50%
     &:hover
       background: lightyellow
     &.is-active
       background: $green
       color: white
+    &.filter-team
+      padding-left: 36px
+      position: relative
   &.is-active
     display: block
 
@@ -294,7 +320,12 @@ $bp: 960px
 
 @media (min-width: $bp)
   #nav
-    display: none
+    left: auto
+    width: 220px
+    .button
+      display: none
+    #goto-today
+      display: block
   #filters
     bottom: 50px
     right: auto
