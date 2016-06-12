@@ -126,6 +126,18 @@ jQuery(document).ready(function ($) {
     JumpToToday();
   });
 
+  $teams.hover(
+    function() {
+      var team = $(this).data('team');
+      $games.filter('[data-home="' + team + '"]').addClass('is-hovered');
+      $games.filter('[data-away="' + team + '"]').addClass('is-hovered');
+    },
+    function() {
+      var team = $(this).data('team');
+      $games.removeClass('is-hovered');
+    }
+  );
+
   $teams.click(function() {
     var team = $(this).data('team');
     var there = $.inArray(team, teams);
@@ -138,6 +150,17 @@ jQuery(document).ready(function ($) {
 
     ApplyFilters();
   });
+
+  $groups.hover(
+    function() {
+      var group = $(this).data('group');
+      $games.filter('[data-group="' + group + '"]').addClass('is-hovered');
+    },
+    function() {
+      var team = $(this).data('team');
+      $games.removeClass('is-hovered');
+    }
+  );
 
   $groups.click(function() {
     var group = $(this).data('group');

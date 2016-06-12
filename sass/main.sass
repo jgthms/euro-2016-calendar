@@ -128,6 +128,14 @@ a
   &:before,
   &:after
     float: right
+  span
+    color: white
+    display: inline-block
+    font-weight: bold
+    margin-right: 10px
+    text-align: right
+    vertical-align: top
+    width: 30px
   &.is-break
     background: rgba(black, 0.5)
     margin-bottom: 1px
@@ -152,6 +160,11 @@ a
   min-height: 41px
   padding: 10px 0
   position: relative
+  &.is-hovered
+    background: lightyellow
+    border-bottom-color: transparent
+    box-shadow: 0 0 0 5px gold
+    z-index: 1
   &.is-now
     background: lightyellow
     .time
@@ -170,6 +183,7 @@ a
       color: $green
     .team.is-away
       color: $light
+      font-weight: normal
     .number:first-child
       background: $green
       color: white
@@ -184,6 +198,7 @@ a
   &.is-away-winner
     .team.is-home
       color: $light
+      font-weight: normal
     .team.is-away
       color: $green
     .number:first-child
@@ -198,19 +213,22 @@ a
   color: $strong
   flex: 1 0
   font-weight: bold
+  line-height: 1
+  position: relative
+  white-space: normal
   .flag-icon
-    margin-top: 4px
+    margin-top: -6px
+    position: absolute
+    top: 50%
   &.is-home
-    padding-right: 10px
+    padding-right: 36px
     text-align: right
     .flag-icon
-      float: right
-      margin-left: 5px
+      right: 10px
   &.is-away
-    padding-left: 10px
+    padding-left: 36px
     .flag-icon
-      float: left
-      margin-right: 5px
+      left: 10px
 
 .score,
 .time
