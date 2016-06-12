@@ -96,7 +96,9 @@ jQuery(document).ready(function ($) {
     $time.text(moment(start).format('HH:mm'));
     $time.css('visibility', 'visible');
 
-    if (moment(now).isBetween(start, end)) {
+    if (moment(start).isBefore(now)) {
+      $game.addClass('is-done');
+    } else if (moment(now).isBetween(start, end)) {
       $game.addClass('is-now');
       $time.text('Now');
     }

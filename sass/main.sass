@@ -158,6 +158,8 @@ a
       background: $red
       color: white
   &.is-home-winner,
+  &.is-done,
+  &.is-draw,
   &.is-away-winner
     .score
       display: flex
@@ -173,6 +175,12 @@ a
       color: white
     .number:last-child
       color: $light
+  &.is-draw
+    .team
+      color: $text
+    .number
+      background: $blue
+      color: white
   &.is-away-winner
     .team.is-home
       color: $light
