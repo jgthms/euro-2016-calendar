@@ -45,6 +45,9 @@ a
   color: $blue
   cursor: pointer
 
+strong
+  color: $strong
+
 =overlay($offset: 0)
   bottom: $offset
   left: $offset
@@ -164,7 +167,7 @@ a
     background: lightyellow
     border-bottom-color: transparent
     box-shadow: 0 0 0 5px gold
-    z-index: 1
+    z-index: 10
   &.is-now
     background: lightyellow
     .time
@@ -269,6 +272,7 @@ a
   padding-right: 0
   position: fixed
   right: 0
+  z-index: 30
   .button
     flex: 1
     margin-right: 10px
@@ -284,6 +288,7 @@ a
   background: white
   overflow: auto
   position: fixed
+  z-index: 20
 
 .filters
   background: $background
